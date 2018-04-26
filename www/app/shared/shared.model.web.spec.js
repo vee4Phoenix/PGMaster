@@ -35,7 +35,7 @@ describe('WebServiceFactory', function() {
   });
 
 
-  xdescribe('sendJSONGetRequest(url)', function() {
+  describe('sendJSONGetRequest(url)', function() {
     var handler;
     var path;
 
@@ -95,7 +95,7 @@ describe('WebServiceFactory', function() {
   });
 
 
-  xdescribe('sendJSONPostRequest(url, request)', function() {
+  describe('sendJSONPostRequest(url, request)', function() {
     var handler;
     var path;
 
@@ -154,7 +154,7 @@ describe('WebServiceFactory', function() {
   });
 
 
-  xdescribe('sendJSONPutRequest(url, request)', function() {
+  describe('sendJSONPutRequest(url, request)', function() {
     var handler;
     var path;
 
@@ -213,7 +213,7 @@ describe('WebServiceFactory', function() {
   });
 
 
-  xdescribe('sendJSONDeleteRequest(url)', function() {
+  describe('sendJSONDeleteRequest(url)', function() {
     var handler;
     var path;
 
