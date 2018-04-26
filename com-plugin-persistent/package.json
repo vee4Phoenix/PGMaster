@@ -1,0 +1,12 @@
+{
+  "name": "com-plugin-persistent",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "com-plugin-persistent",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "description": "Persistent Storage for string, boolean, integer, long"
+}

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com-plugin-database" version="1.0.0">
+  <name>DatabasePlugin</name>
+  <description>Database Plugin which allows Phonegap App to store data in native database</description>
+  <author>Hubert Yap</author>
+  <license>Apache 2.0</license>
+  <keywords>cordova, database</keywords>
+  <js-module src="www/plugin_database.js" name="DatabasePlugin">
+      <clobbers target="plugin_database" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="DatabasePlugin">
+        <param name="android-package" value="com.plugin.database.helper.DatabasePlugin"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/helper/DatabasePlugin.java" target-dir="src/com/plugin/database/helper" />
+    <source-file src="src/android/helper/JSONSerializable.java" target-dir="src/com/plugin/database/helper" />
+    <source-file src="src/android/helper/UpgradeHelper.java" target-dir="src/com/plugin/database/helper" />
+    <!--source-file src="src/android/helper/Migration.java" target-dir="src/com/plugin/database/helper" />
+    <source-file src="src/android/helper/MigrationImpl.java" target-dir="src/com/plugin/database/helper" />
+    <source-file src="src/android/helper/MigrateV1ToV2.java" target-dir="src/com/plugin/database/helper" /-->
+    <source-file src="src/android/model/DaoMaster.java" target-dir="src/com/plugin/database/model" />
+    <source-file src="src/android/model/DaoSession.java" target-dir="src/com/plugin/database/model" />
+    <source-file src="src/android/model/Diary.java" target-dir="src/com/plugin/database/model" />
+    <source-file src="src/android/model/DiaryDao.java" target-dir="src/com/plugin/database/model" />
+    <source-file src="src/android/model/Photo.java" target-dir="src/com/plugin/database/model" />
+    <source-file src="src/android/model/PhotoDao.java" target-dir="src/com/plugin/database/model" />
+    <source-file src="src/android/model/Reflection.java" target-dir="src/com/plugin/database/model" />
+    <source-file src="src/android/model/ReflectionDao.java" target-dir="src/com/plugin/database/model" />
+    <lib-file src="src/android/libs/greendao-1.3.7.jar" />
+  </platform>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="DatabasePlugin">
+        <param name="ios-package" value="DatabasePlugin"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/DatabasePlugin.h" />
+    <source-file src="src/ios/DatabasePlugin.m" />
+    <header-file src="src/ios/Diary+Serialization.h" />
+    <source-file src="src/ios/Diary+Serialization.m" />
+    <header-file src="src/ios/NSArray+Serialization.h" />
+    <source-file src="src/ios/NSArray+Serialization.m" />
+    <header-file src="src/ios/NSDictionary+Serialization.h" />
+    <source-file src="src/ios/NSDictionary+Serialization.m" />
+    <header-file src="src/ios/NSFileManager+TBDirectories.h" />
+    <source-file src="src/ios/NSFileManager+TBDirectories.m" />
+    <header-file src="src/ios/NSManagedObject+Serialization.h" />
+    <source-file src="src/ios/NSManagedObject+Serialization.m" />
+    <header-file src="src/ios/NSManagedObject+TBAdditions.h" />
+    <source-file src="src/ios/NSManagedObject+TBAdditions.m" />
+    <header-file src="src/ios/NSManagedObjectContext+TBAdditions.h" />
+    <source-file src="src/ios/NSManagedObjectContext+TBAdditions.m" />
+    <header-file src="src/ios/NSManagedObjectID+TBString.h" />
+    <source-file src="src/ios/NSManagedObjectID+TBString.m" />
+    <header-file src="src/ios/Photo+Serialization.h" />
+    <source-file src="src/ios/Photo+Serialization.m" />
+    <header-file src="src/ios/Reflection+Serialization.h" />
+    <source-file src="src/ios/Reflection+Serialization.m" />
+    <header-file src="src/ios/TBCoreDataStoreS1.h" />
+    <source-file src="src/ios/TBCoreDataStoreS1.m" />
+    <header-file src="src/ios/TBCoreDataStoreS2.h" />
+    <source-file src="src/ios/TBCoreDataStoreS2.m" />
+    <source-file src="src/ios/Model.xcdatamodeld" />
+  </platform>
+</plugin>

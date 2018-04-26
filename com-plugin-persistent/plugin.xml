@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="com-plugin-persistent" version="1.0.0">
+  <name>StoragePersistent</name>
+  <description>Phonegap Plugin which allows Phonegap App to store persistent data natively</description>
+  <author>Hubert Yap</author>
+  <license>Apache 2.0</license>
+  <keywords>cordova, contact point, persistent</keywords>
+
+  <!-- How javascript can call your plugin method -->
+  <js-module src="www/plugin_persistent.js" name="StoragePersistent">
+      <clobbers target="plugin_persistent" />
+  </js-module>
+
+  <!-- android -->
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="StoragePersistent">
+        <param name="android-package" value="com.plugin.persistent.StoragePersistent"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/android/StoragePersistent.java" target-dir="src/com/plugin/persistent" />
+  </platform>
+
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="StoragePersistent">
+        <param name="ios-package" value="StoragePersistent"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/StoragePersistent.h" />
+    <source-file src="src/ios/StoragePersistent.m" />
+  </platform>
+
+</plugin>

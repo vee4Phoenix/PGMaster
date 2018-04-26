@@ -1,0 +1,12 @@
+{
+  "name": "com-plugin-database",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "com-plugin-database",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "description": "Database Storage"
+}
